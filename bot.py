@@ -1,13 +1,20 @@
-importazione os
-         telegramma.         ext...ext! ext...exc!ext...ext...
+import os
+from telegram.ext import Updater, CommandHandler
 
-TokenTokenToTokenTokenTo KenToken = os.getenv("bot_token")  # prende il token dalle Config Varsgetenv("bot_token")  # prende il token dalle Config Vars
+# Prende il token dalle Config Vars di Heroku
+TOKEN = os.getenv("bot_token")
 
-Def. Inizia(Aggiornamento, contesto):Inizia(Aggiornamento, contesto):
-   aggiornamento.  Messaggio.Rispondi_testo("Ciao! Il bot è attivo su Heroku 🚀")Messaggio.Reply_text("Ciao! Il bot è attivo su Heroku 🚀")
+# Funzione che risponde al comando /start
+def start(update, context):
+    update.message.reply_text("Ciao! Il bot è attivo su Heroku 🚀")
 
-Aggiornatore =  Aggiornamento(Token)Aggiornamento(Token)
-aggiornamento.spedizioniere..Add_handler(CommandHandler("start", iniziare))spedizioniere..Add_handler(CommandHandler("start", iniziare))
+# Crea l'updater e dispatcher
+updater = Updater(TOKEN, use_context=True)
+dispatcher = updater.dispatcher
 
-aggiornamento.Start_polling()Start_polling()
-aggiornamento.inattivo..()inattivo..()
+# Aggiunge il comando /start
+dispatcher.add_handler(CommandHandler("start", start))
+
+# Avvia il bot
+updater.start_polling()
+updater.idle()
