@@ -1,4 +1,4 @@
-importazione OS
+importazione os
          telegramma.         ext...ext! ext...exc!ext...ext...
 
 TokenTokenToTokenTokenTo KenToken = os.getenv("bot_token")  # prende il token dalle Config Varsgetenv("bot_token")  # prende il token dalle Config Vars
