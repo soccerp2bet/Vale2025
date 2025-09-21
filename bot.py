@@ -1,5 +1,5 @@
 import os
-from telegram.ext import Updater, CommandHandler
+from  telegram.ext  import  Updater, CommandHandler
 
 # Prende il token dalle Config Vars di Heroku
 TOKEN = os.getenv("bot_token")
